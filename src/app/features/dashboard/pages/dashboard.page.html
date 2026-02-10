@@ -1,0 +1,146 @@
+<div class="p-6">
+
+    <!-- Greeting section -->
+    <div class="w-full flex justify-between mt-2">
+        <div>
+            <p class=" text-slate-500 text-sm font-medium">Sunday, Feb 08</p>
+            <span class="block text-2xl font-bold">Good Evening, Lucas</span>
+        </div>
+        <div class=" flex justify-center items-center">
+            <div class="text-2xl"><i class="fa-regular fa-bell"></i></div>
+        </div>
+    </div>
+
+
+    <div class="flex-1 flex flex-col gap-6">
+
+        <!-- Progress Section -->
+        <div class="mt-10 w-full border border-blue-100 rounded-xl
+         bg-linear-to-br from-blue-50 to bg-white p-5 flex flex-col gap-4">
+            <div class="flex flex-col">
+                <div class="flex justify-between">
+                    <span class="text-slate-600 font-medium">Today's Progress</span>
+                    <span class="p-1 bg-blue-100 rounded-md text-xs font-bold text-blue-500">On Track</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <span class="text-4xl font-bold">3</span>
+                <span class="text-slate-500 font-medium text-lg">Tasks Remaining</span>
+            </div>
+
+            <div class="flex">
+                <div class="w-full rounded-3xl h-2 bg-slate-200">
+                    <div class="h-full w-[60%] bg-blue-500 rounded-3xl"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Completion Status -->
+        <div class="w-full grid grid-cols-2 gap-6">
+            <div class="w-full flex-1 flex flex-col gap-2 h-35 border p-4 border-slate-300 rounded-xl">
+                <div class="flex justify-between">
+                    <span class="text-slate-500 font-medium">Data Captured</span>
+                    <span class="text-lime-600 text-xl"><i class="fa-solid fa-circle-check"></i></span>
+                </div>
+                <div>
+                    <p class="tracking-wider text-3xl font-bold">98%</p>
+                </div>
+                <div>
+                    <span class="p-1 bg-green-100 rounded-md text-xs font-medium text-green-500 tracking-widest"><i
+                            class="fa-solid fa-arrow-trend-up"></i> +2.56</span>
+                </div>
+            </div>
+
+            <div class="w-full flex-1 flex flex-col gap-2 h-35 border p-4 border-slate-300 rounded-xl">
+                <div class="flex justify-between">
+                    <span class="text-slate-500 font-medium">Issues</span>
+                    <span class="text-red-600 text-xl"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                </div>
+                <div>
+                    <p class="tracking-wider text-3xl font-bold">12</p>
+                </div>
+                <div>
+                    <span class="p-1 bg-red-100 rounded-md text-xs font-medium text-red-500 tracking-widest"><i
+                            class="fa-solid fa-arrow-trend-up mx-1"></i>3 New</span>
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex flex-col gap-4">
+            <div class="w-full flex justify-between">
+                <p class="text-xl font-bold">Upcoming Events</p>
+                <p class="font-medium text-blue-500">See All</p>
+            </div>
+
+            <div class="flex  flex-col gap-4">
+                <div class="
+                w-full min-h-25 border border-slate-200 rounded-xl
+                flex justify-between items-center p-3
+                ">
+                    <div class="h-full flex gap-4 ">
+                        <div class="h-18 w-28 bg-neutral-300 rounded-lg">
+                            <!-- <img class="w-full h-full rounded-lg" loading="lazy" src="https://goaudits.com/wp-content/uploads/2019/04/tablet_construction2.jpeg" alt="" srcset=""> -->
+                        </div>
+                        <div class="w-full">
+                            <p class="text-md font-semibold text-slate-800">Inspection #VJP-206</p>
+                            <p class="text-sm text-slate-400">Horizone | Parking 2</p>
+                            <div class="w-fit gap-1.5 flex justify-between">
+                                <p class="text-xs mt-2 text-slate-400">15-Feb-2026</p>
+                                <p class="text-xs mt-2 text-slate-400"><i class="fa-solid fa-users mx-1"></i> 5</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a routerLink="/audit/view/VJP-206" class="w-8 h-8 rounded-full bg-slate-200 text-neutral-500 flex justify-center items-center"><i
+                            class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="flex  flex-col gap-4">
+                <div class="
+                w-full min-h-25 border border-slate-200 rounded-xl
+                flex justify-between items-center p-3
+                ">
+                    <div class="h-full flex gap-4 ">
+                        <div class="h-18 w-28 bg-neutral-300 rounded-lg">
+                            <!-- <img class="w-full h-full rounded-lg" loading="lazy" src="https://images.pexels.com/photos/35496410/pexels-photo-35496410.jpeg" alt="" srcset=""> -->
+                        </div>
+                        <div class="w-full">
+                            <p class="text-md font-semibold text-slate-800">Inspection #RMTL-206</p>
+                            <p class="text-sm text-slate-400">Tower 1 | Basement</p>
+                            <div class="w-fit gap-1.5 flex justify-between">
+                                <p class="text-xs mt-2 text-slate-400">15-Feb-2026</p>
+                                <p class="text-xs mt-2 text-slate-400"><i class="fa-solid fa-users mx-1"></i>8</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a routerLink="/audit/view/RMTL-206" class="w-8 h-8 rounded-full bg-slate-200 text-neutral-500 flex justify-center items-center"><i
+                            class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="flex  flex-col gap-4">
+                <div class="
+                w-full min-h-25 border border-slate-200 rounded-xl
+                flex justify-between items-center p-3
+                ">
+                    <div class="h-full flex gap-4 ">
+                        <div class="h-18 w-28 bg-neutral-300 rounded-lg">
+                            <!-- <img class="w-full h-full rounded-lg" loading="lazy" src="https://images.pexels.com/photos/8961701/pexels-photo-8961701.jpeg" alt="" srcset=""> -->
+                        </div>
+                        <div class="w-full">
+                            <p class="text-md font-semibold text-slate-800">Inspection #TPL-1906</p>
+                            <p class="text-sm text-slate-400">Wing C | Floor 15 To Floor 24</p>
+                            <div class="w-fit gap-1.5 flex justify-between">
+                                <p class="text-xs mt-2 text-slate-400">15-Feb-2026</p>
+                                <p class="text-xs mt-2 text-slate-400"><i class="fa-solid fa-users mx-1"></i>20</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a routerLink="/audit/view/TPL-1906" class="w-8 h-8 rounded-full bg-slate-200 text-neutral-500 flex justify-center items-center"><i
+                            class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<div class="w-full h-15 border-b border-b-slate-300 flex justify-between p-6 py-8">
+    <div class="w-full h-full flex items-center gap-5">
+        <button (click)="back()" class="cursor-pointer"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="h-full flex flex-col justify-center">
+            <p class="uppercase text-blue-600 font-bold text-xs">Scheduled Audit</p>
+            <p class="text-md font-bold">Audit- #{{auditCode}}</p>
+        </div>
+    </div>
+    <div class="flex justify-center items-center">
+        <button class="cursor-pointer"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+    </div>
+</div>
+
+<div class="p-6 flex flex-col gap-4">
+    <div class="rounded-xl w-full h-auto border border-slate-200 shadow-slate-100">
+        <div class="w-full h-40 bg-linear-to-br from-emerald-100 to-white rounded-t-xl"></div>
+        <div class="w-full p-4 flex flex-col">
+            <div class="border-b pb-4 border-slate-200 grid grid-cols-2">
+                <div class="space-y-1">
+                    <p class="uppercase text-xs text-slate-400 font-semibold">Status</p>
+                    <div class="font-medium text-md flex items-center gap-2">
+                        <i class="fa-solid fa-circle text-blue-500"></i> Scheduled
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <p class="uppercase text-xs text-slate-400 font-semibold">Priority</p>
+                    <div class="font-medium text-md flex items-center gap-2">
+                        <i class="fa-solid fa-chart-simple text-amber-400"></i> Medium
+                    </div>
+                </div>
+            </div>
+            <div class="py-4 space-y-5">
+                <p class="uppercase text-sm font-medium text-slate-500">Audit Isnpector</p>
+                <div class="flex gap-2 items-center">
+                    <div class="w-10 h-10 rounded-full bg-slate-200"></div>
+                    <div>
+                        <p class="text-lg font-semibold">Jhone Due</p>
+                        <p class="text-slate-500">Senior QA Analyst</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full space-y-2">
+        <p class="text-xl font-semibold">Audit Scope</p>
+        <div class="flex flex-col flex-1 gap-4">
+            <div class="w-full p-3 rounded-xl border border-slate-300 flex justify-between">
+                <div class="flex gap-4 items-center">
+                    <div class="w-8 h-8 bg-blue-100  rounded-sm flex  text-blue-500"><i
+                            class="fa-solid m-auto fa-trowel-bricks"></i></div>
+                    <p class="font-semibold">RCC/Structral</p>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-xs text-slate-400">Points: 10</span>
+                </div>
+            </div>
+
+            <div class="w-full p-3 rounded-xl border border-slate-300 flex justify-between">
+                <div class="flex gap-4 items-center">
+                    <div class="w-8 h-8 bg-amber-100  rounded-sm flex  text-amber-600"><i
+                            class="fa-solid fa-bolt m-auto"></i></div>
+                    <p class="font-semibold">MEP</p>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-xs text-slate-400">Points: 20</span>
+                </div>
+            </div>
+
+            <div class="w-full p-3 rounded-xl border border-slate-300 flex justify-between">
+                <div class="flex gap-4 items-center">
+                    <div class="w-8 h-8 bg-orange-100  rounded-sm flex  text-orange-500"><i
+                            class="fa-solid fa-shapes m-auto"></i></div>
+                    <p class="font-semibold">Finishing</p>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-xs text-slate-400">Points: 70</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full">
+        <button class="w-full h-15 bg-blue-500 text-white font-semibold rounded-xl space-x-2 text-center">
+            <i class="fa-solid fa-circle-play text-2xl"></i> <span class="text-xl">Start Audit</span>
+        </button>
+    </div>
+</div>
