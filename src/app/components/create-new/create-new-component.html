@@ -1,0 +1,60 @@
+<div class="fixed select-none inset-0 transition-all duration-300" [class.pointer-events-none]="!state()">
+
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-neutral-900/60 backdrop-blur-[1.5px] transition-opacity duration-300"
+        [class.opacity-0]="!state()" [class.opacity-100]="state()"></div>
+
+    <!-- Bottom Sheet -->
+    <div class="absolute bottom-15 w-full flex flex-col gap-3 h-[45vh] bg-white rounded-t-2xl z-10
+           transition-transform duration-300 ease-out" [class.translate-y-full]="!state()"
+        [class.translate-y-0]="state()">
+
+        <div class="w-full flex gap-2 p-2">
+            <button (click)="toggleCreateMenu()" class="text-2xl"><i class="fa-solid fa-arrow-left"></i></button>
+            <p class="font-bold text-slate-800 text-2xl">Create New</p>
+            <!-- <button (click)="toggleCreateMenu()" class="text-2xl"><i class="fa-solid fa-xmark"></i></button> -->
+        </div>
+        <div class="w-full flex flex-col gap-4 px-5 p-2">
+            <div class="w-full p-3 flex justify-between h-20 rounded-xl bg-blue-50 border border-blue-200">
+                <div class="flex items-center gap-2">
+                    <div class="h-14 w-14 rounded-full bg-blue-500 flex text-3xl text-white"><i class="fa-solid fa-clipboard-list m-auto"></i></div>
+                    <div>
+                        <p class="text-lg font-semibold">Start Inspection</p>
+                        <p class="text-sm font-medium text-slate-500">Run a scheduled or manual audit</p>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+            <div class="w-full p-3 flex justify-between h-20 rounded-xl bg-orange-50 border border-orange-200">
+                <div class="flex items-center gap-2">
+                    <div class="h-14 w-14 rounded-full bg-orange-500 flex text-3xl text-white"><i class="fa-solid fa-house-circle-exclamation m-auto"></i></div>
+                    <div>
+                        <p class="text-lg font-semibold">Add Non Compliance</p>
+                        <p class="text-sm font-medium text-slate-500">Raise a new compliance alert</p>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+            <div class="w-full p-3 flex justify-between h-20 rounded-xl bg-emerald-50 border border-emerald-200">
+                <div class="flex items-center gap-2">
+                    <div class="h-14 w-14 rounded-full bg-emerald-500 flex text-3xl text-white"><i class="fa-solid fa-location-arrow m-auto"></i></div>
+                    <div>
+                        <p class="text-lg font-semibold">Add Observations</p>
+                        <p class="text-sm font-medium text-slate-500">Report an on-site observation</p>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
