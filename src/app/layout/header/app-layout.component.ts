@@ -5,6 +5,8 @@ import { FootComponent } from "../footer/footer.component";
 import { filter } from "rxjs";
 import { CreateNewComponent } from "../../components/create-new/create-new-component";
 import { LayoutStoreService } from "../../store/layout-store.service";
+import { ConfirmDialogModule } from "primeng/confirmdialog";
+import { ConfirmationService } from "primeng/api";
 
 
 @Component({
@@ -21,12 +23,14 @@ import { LayoutStoreService } from "../../store/layout-store.service";
           <app-footer></app-footer>
         </div> 
         <app-create-new ></app-create-new>
-
+      <p-confirmdialog />     
+        
   </div>
 </div>
 
     `,
-  imports: [RouterOutlet, FootComponent, CreateNewComponent],
+  imports: [RouterOutlet, FootComponent, CreateNewComponent,ConfirmDialogModule],
+  providers:[ConfirmationService],
   standalone: true
 })
 export class AppLayout {

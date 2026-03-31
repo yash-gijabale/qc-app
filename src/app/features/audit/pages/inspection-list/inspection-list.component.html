@@ -1,0 +1,85 @@
+<div class="w-full h-screen">
+    <div>
+        <app-page-header [redirectUrl]="'/dashboard'" [pageTitle]="pageTitle"></app-page-header>
+    </div>
+    <div class="w-full h-auto mt-15 p-3 flex items-center justify-between gap-2">
+        <p-iconfield class="w-full">
+            <p-inputicon class="fa-solid fa-magnifying-glass" />
+            <input (input)="searchInspection($event)" class="!bg-slate-100 w-full " type="text" pInputText
+                placeholder="Search Title, ID" />
+        </p-iconfield>
+        <button (click)="toggle($event)" pButton class=" text-slate-400" severity="secondary">
+            @if (selectedMember) { <p-overlaybadge severity="success" badgeSize="small">
+                <i class="fa-solid fa-sliders text-xl"></i>
+            </p-overlaybadge>}
+            @else {
+            <i class="fa-solid fa-sliders text-xl"></i>
+            }
+        </button>
+
+        <p-popover #op styleClass="shadow " appendTo="body">
+            <div class="flex flex-col gap-4">
+                <div>
+                    <span class="font-medium block mb-2">Inspection Leaders</span>
+                    <ul class="list-none p-0 m-0 flex flex-col">
+                        @for (member of members; track $index) {
+
+                        <li class="flex items-center justify-between px-2 py-3 gap-3 hover:bg-emphasis cursor-pointer rounded-border"
+                            (click)="selectMember(member)">
+                            <div class="flex  gap-2">
+                                <img [src]="'https://primefaces.org/cdn/primeng/images/demo/avatar/' + member.image"
+                                    style="width: 44px" />
+                                <div>
+                                    <span class="font-medium">{{ member.name }}</span>
+                                    <div class="text-sm text-surface-500 dark:text-surface-400">{{ member.email }}</div>
+                                </div>
+                            </div>
+
+                            <div>
+                                @if (selectedMember?.email == member.email) {
+                                <i class="fa-solid fa-check"></i>
+                                }
+                            </div>
+                        </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </p-popover>
+    </div>
+    <div class="p-3 bg-neutral-100 min-h-screen overflow-hidden flex gap-4 flex-col">
+        <!-- CHIPS FILTERS -->
+        <div class="flex gap-2 items-center
+         overflow-x-auto
+         pr-7
+         scroll-smooth
+         snap-x snap-mandatory
+         touch-pan-x
+         [&::-webkit-scrollbar]:hidden
+         [-ms-overflow-style:none]
+         [scrollbar-width:none]">
+
+            @for (badge of BADGE_LIST; track $index) {
+            <p-chip [label]="badge" (click)="setActiveTab(badge)"
+                [class]="`shrink-0 snap-center rounded-full  font-semibold  ${badge == filterState.activeTab ? '!bg-blue-600 !text-white' : 'bg-slate-200! text-slate-6   00!' }`">
+            </p-chip>
+            }
+
+        </div>
+        <!--  -->
+        <div class="flex flex-col flex-1 gap-2">
+            <div>
+                <p class="font-medium text-lg text-slate-500 ">Today's Scheduled</p>
+            </div>
+
+            @for (inspection of inspections; track $index;) {
+            <app-inspection-card [inspection]="inspection"></app-inspection-card>
+            }
+
+        </div>
+
+    
+
+        
+    </div>

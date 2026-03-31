@@ -1,0 +1,118 @@
+<div class="w-full">
+    <div>
+        <app-page-header [redirectUrl]="'/dashboard'" [pageTitle]="pageTitle"></app-page-header>
+    </div>
+    <div class="p-3 mt-16">
+        <form class="flex flex-col gap-4" [formGroup]="auditForm" (ngSubmit)="handleFormSubmit()">
+            <div class="w-full space-y-1">
+                <p class="font-semibold">Project Name</p>
+                <input formControlName="projectName"
+                    class=" w-full p-3 rounded-xl border border-slate-300 placeholder:text-slate-400 font-medium outline-0 placeholder:font-normal"
+                    placeholder="Project Name" type="text">
+            </div>
+
+            <div class="w-full space-y-1">
+                <p class="font-semibold">Address</p>
+                <textarea rows="2" formControlName="address"
+                    class="w-full p-3 rounded-xl border border-slate-300 placeholder:text-slate-400 font-medium outline-0 placeholder:font-normal"
+                    placeholder="Addess" type="text"></textarea>
+            </div>
+
+            <div class="w-full">
+                <div class="space-y-1">
+                    <p class="font-semibold">Sampled Area</p>
+                    <textarea rows="2" formControlName="sampledArea"
+                        class="outline-1 outline-red-500 w-full p-3 rounded-xl border border-slate-300 placeholder:text-slate-400 font-medium  placeholder:font-normal"
+                        placeholder="# e.g. Wing A, Wing B" type="text"></textarea>
+                </div>
+                <p class="text-sm text-red-600 m-0">Sampled area is required</p>
+            </div>
+
+
+
+            <div class="w-full space-y-2">
+                <!-- <input type="number"  formControlName="inspectionType"> -->
+                <p class="font-semibold">Inspection Type</p>
+                <div class="grid grid-cols-3 gap-3 text-amber-950 text-sm font-semibold">
+                    <button class="p-4 border space-y-1  border-slate-300 rounded-xl flex flex-col">
+                        <span class="text-2xl"><i class="fa-solid fa-chart-simple"></i></span>
+                        <span>Routine</span>
+                    </button>
+                    <button class="p-4 border space-y-1 border-slate-300 rounded-xl flex flex-col">
+                        <span class="text-2xl"><i class="fa-solid fa-house-circle-check"></i></span>
+                        <span>Final QC</span>
+                    </button>
+                    <button class="p-4 border space-y-1 border-slate-300 rounded-xl flex flex-col">
+                        <span class="text-2xl"><i class="fa-solid fa-circle-exclamation"></i></span>
+                        <span>Emergency</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="w-full space-y-1">
+                <p class="font-semibold">Inspector Note <span class="text-slate-400 font-normal">(Optional)</span></p>
+                <textarea rows="3" formControlName="note"
+                    class="w-full p-3 rounded-xl border border-slate-300 font-medium outline-0  placeholder:text-slate-400 placeholder:font-normal"
+                    placeholder="Addess" type="text"></textarea>
+            </div>
+
+             <div class="w-full space-y-1">
+                <p class="font-semibold">Add Image <span class="text-slate-400 font-normal">(Optional)</span></p>
+                <input type="file" class="w-full p-3 rounded-xl border border-slate-300 font-medium outline-0  placeholder:text-slate-400 placeholder:font-normal">
+            </div>
+
+            <div class="w-full p-3 flex flex-col gap-3 border rounded-xl border-slate-300 bg-neutral-100">
+                <div class="flex gap-2 items-center justify-between">
+                    <div class="flex gap-3 items-center">
+                        <i class="fa-solid fa-calendar-days text-2xl text-blue-500"></i>
+                        <div class="flex flex-col">
+                            <span class="font-bold">Scheduled for Later</span>
+                            <span class="text-slate-400">Set date fot this inspection</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input formControlName="isSchedule" type="checkbox" class="sr-only peer">
+
+                            <!-- Background -->
+                            <div class="w-13 h-7 bg-gray-300 rounded-full 
+              peer-checked:bg-blue-600 
+              transition-colors duration-300">
+                            </div>
+
+                            <!-- Circle -->
+                            <div class="absolute left-1 top-1 
+              w-5 h-5 bg-white rounded-full 
+              transition-transform duration-300
+              peer-checked:translate-x-6">
+                            </div>
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="w-full">
+                    <p class="font-semibold text-neutral-500">Schedule On</p>
+                    <!-- <input placeholder="MM/dd/yyyy" formControlName="scheduledOn"
+                        class=" outline-0 w-full select-none bg-white p-3 rounded-xl border border-slate-300 placeholder:text-slate-400 font-medium  "
+                        type="date"> -->
+                    <p-datepicker class="w-full" [readonlyInput]="true" [showButtonBar]="true" [dateFormat]="'dd-M-yy'"  placeholder="DD/MM/YYYY" formControlName="scheduledOn" [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" />
+
+                </div>
+            </div>
+
+            <div class="w-full">
+                <!-- <button type="submit"
+                    class="w-full h-15 bg-blue-500 text-white font-semibold rounded-xl space-x-2 text-center">
+                    <i class="fa-solid fa-circle-play text-2xl"></i> <span class="text-xl">Start Inspection</span>
+                </button> -->
+                <p-confirmdialog />     
+
+                <p-button label="Check" (click)="confirm2($event)" styleClass="w-full space-x-2 !text-xl p-3" icon="fa-solid fa-circle-play" />
+            </div>
+        </form>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,29 @@
+<div  class="w-full h-fit bg-white rounded-2xl border border-neutral-300 p-3">
+    <div class="w-full h-full flex flex-col gap-4 ">
+        <div class="w-full flex justify-between ">
+            <div class="flex gap-2 items-center">
+                <div [class]="
+                    `rounded-2xl p-1 px-2 h-fit border font-medium  text-xs ${getStatusStyles(inspection.status).badge}`
+                    ">{{inspection.status}}</div>
+                <span class="text-sm text-slate-400 font-medium">Due {{inspection.time}}</span>
+            </div>
+            <div>
+                <i (click)="menu.toggle($event)" class="fa-solid fa-ellipsis"></i>
+                  <p-menu #menu appendTo="body" [model]="items" [popup]="true" />
+            </div>
+        </div>
+        <div class=" h-full flex justify-between items-center">
+            <div class="flex gap-4">
+                <div [class]="`size-15 rounded-2xl flex justify-center items-center text-3xl ${inspection.iconConfig.iconBg} ${inspection.iconConfig.iconColor}`"><i [class]="inspection.icons"></i></div>
+                <div class="flex flex-col justify-center w-60">
+                    <p class="text-md font-semibold">{{inspection.title}}</p>
+                    <p class="text-slate-400 font-medium text-sm">Batch: #{{inspection.id}}</p>
+                </div>
+            </div>
+            <div>
+                <button [routerLink]="`/audit/view/${inspection.id}`" pButton class=" text-slate-400 rounded-full!" icon="fa-solid fa-chevron-right" severity="secondary"></button>
+            </div>
+        </div>
+
+    </div>
+</div>

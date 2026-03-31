@@ -1,10 +1,14 @@
 import { Component, inject } from "@angular/core";
 import { LayoutStoreService } from "../../store/layout-store.service";
+import { RouterLink } from "@angular/router";
 
 @Component({
     selector:'app-create-new',
     templateUrl:'./create-new-component.html',
-    standalone:true
+    standalone:true,
+    imports:[
+        RouterLink,
+    ]
 })
 export class CreateNewComponent{
 
